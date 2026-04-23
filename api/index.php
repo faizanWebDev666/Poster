@@ -23,6 +23,9 @@ if (!is_link($storage)) {
     }
 }
 
+// Load Composer autoloader
+require dirname(__DIR__) . '/vendor/autoload.php';
+
 // If symlink failed (read-only FS), bind storage path to /tmp
 if (!is_link($storage)) {
     $app = require_once dirname(__DIR__) . '/bootstrap/app.php';
